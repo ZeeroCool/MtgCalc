@@ -16,7 +16,7 @@ const PaymentResults = ({ results }) => {
   const data = results.payment;
 
   return (
-    <div className="payment-results">
+    <div className="payment-results" style={{color: 'black'}}>
       <h2>Payment Summary</h2>
 
       <div className="results-grid">
