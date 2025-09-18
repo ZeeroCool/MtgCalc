@@ -21,11 +21,11 @@ const PaymentResults = ({ results }) => {
 
       <div className="results-grid">
         <div className="result-card primary">
-          <h3>Monthly Payment (P&I)</h3>
+          <h3 className="black-text">Monthly Payment (P&I)</h3>
           <div className="amount-large">
             {formatCurrency(data.principalAndInterest)}
-          </div>
-          <small>Principal & Interest Only</small>
+          </div>          
+          <small className="black-text">Principal & Interest Only</small>
         </div>
 
         <div className="result-card">
@@ -62,7 +62,7 @@ const PaymentResults = ({ results }) => {
 
       <div className="loan-summary">
         <h3>Loan Summary</h3>
-        <div className="summary-grid">
+        <div className="summary-grid">          
           <div className="summary-item">
             <span className="label">Loan Amount:</span>
             <span className="value">{formatCurrency(data.loanAmount)}</span>
