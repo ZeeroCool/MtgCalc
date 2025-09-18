@@ -1,0 +1,211 @@
+/* PaymentResults.css */
+.payment-results {
+  background-color: var(--surface-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.payment-results h2 {
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .results-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.result-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.result-card.primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+  color: white;
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+}
+
+.result-card h3,
+.result-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.result-card.primary h3 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.amount-large {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  line-height: 1;
+}
+
+.amount {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+}
+
+.result-card.primary .amount-large {
+  color: white;
+}
+
+.result-card small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+.result-card.primary small {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Loan Summary Section */
+.loan-summary {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.loan-summary h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: var(--surface-color);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.summary-item .label {
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.summary-item .value {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.payment-results {
+  animation: slideInUp 0.5s ease-out;
+}
+
+.result-card {
+  animation: slideInUp 0.5s ease-out;
+}
+
+.result-card:nth-child(2) { animation-delay: 0.1s; }
+.result-card:nth-child(3) { animation-delay: 0.2s; }
+.result-card:nth-child(4) { animation-delay: 0.3s; }
+.result-card:nth-child(5) { animation-delay: 0.4s; }
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .payment-results {
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .amount-large {
+    font-size: 2rem;
+  }
+
+  .amount {
+    font-size: 1.25rem;
+  }
+
+  .result-card {
+    padding: 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .payment-results {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+
+  .result-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .result-card.primary {
+    background: white !important;
+    color: black !important;
+    border: 2px solid #000 !important;
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "default": [
+    {
+      "key": "swarm/api/contract",
+      "value": "POST /api/calculate - Required: loanAmount(1000-10M), interestRate(0.01-50%), termMonths(1-480). Optional: financeCharges, annualInsurance, propertyTaxes, mortgageInsurance. Returns: monthlyPITI, apr, totalPayments, amortizationSchedule",
+      "namespace": "default",
+      "timestamp": 1758144508990
+    },
+    {
+      "key": "swarm/ui/tech-stack",
+      "value": "React+TypeScript, Tailwind CSS, React Hook Form, Zod validation, mobile-first responsive, WCAG 2.1 AA accessibility, <2s load time",
+      "namespace": "default",
+      "timestamp": 1758144510955
+    },
+    {
+      "key": "swarm/calculations/formulas",
+      "value": "Monthly Payment: M = P[r(1+r)^n]/[(1+r)^n-1], APR includes finance charges, PITI = Principal+Interest+Insurance+Taxes, Amortization schedule with monthly breakdown",
+      "namespace": "default",
+      "timestamp": 1758144512773
+    },
+    {
+      "key": "frontend_complete",
+      "value": "React frontend completed with responsive design, form validation, API integration, amortization table, and error handling. Ready for backend integration on port 3000.",
+      "namespace": "default",
+      "timestamp": 1758144685249
+    },
+    {
+      "key": "frontend_api_contract",
+      "value": "Frontend expects backend API on localhost:8000 with endpoints: POST /api/mortgage/calculate (principal, annualRate, years) -> {monthlyPayment}, POST /api/mortgage/amortization -> [{paymentNumber, monthlyPayment, principalPayment, interestPayment, remainingBalance}]",
+      "namespace": "default",
+      "timestamp": 1758144692677
+    }
+  ]
+}

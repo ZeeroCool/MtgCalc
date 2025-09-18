@@ -1,0 +1,66 @@
+{
+  "name": "mortgage-calculator-fullstack",
+  "version": "1.0.0",
+  "description": "Full-stack mortgage calculator with React frontend and Node.js backend",
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "src/backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd src/backend && npm run dev",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:frontend": "cd frontend && npm run preview",
+    "start:backend": "cd src/backend && npm start",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "echo 'Backend build complete - no transpilation needed'",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm run test",
+    "test:backend": "cd src/backend && npm test",
+    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd src/backend && npm run lint",
+    "install:all": "npm install && npm run install:frontend && npm run install:backend",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd src/backend && npm install",
+    "clean": "rm -rf node_modules frontend/node_modules src/backend/node_modules frontend/dist",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "deploy": "npm run build && echo 'Ready for deployment'",
+    "health:frontend": "curl -f http://localhost:3000 || exit 1",
+    "health:backend": "curl -f http://localhost:8000/health || exit 1",
+    "health": "npm run health:backend && npm run health:frontend"
+  },
+  "keywords": [
+    "mortgage",
+    "calculator",
+    "react",
+    "nodejs",
+    "express",
+    "fullstack",
+    "financial"
+  ],
+  "author": "Claude Code Integration Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "@types/node": "^20.8.9"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/mortgage-calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/mortgage-calculator/issues"
+  },
+  "homepage": "https://github.com/your-username/mortgage-calculator#readme"
+}
