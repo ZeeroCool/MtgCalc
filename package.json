@@ -48,8 +48,8 @@
   "author": "Claude Code Integration Team",
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "^8.2.2",
-    "@types/node": "^20.8.9"
+    "@types/node": "^20.8.9",
+    "concurrently": "^8.2.2"
   },
   "engines": {
     "node": ">=18.0.0",
@@ -62,5 +62,8 @@
   "bugs": {
     "url": "https://github.com/your-username/mortgage-calculator/issues"
   },
-  "homepage": "https://github.com/your-username/mortgage-calculator#readme"
+  "homepage": "https://github.com/your-username/mortgage-calculator#readme",
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^1.0.120"
+  }
 }

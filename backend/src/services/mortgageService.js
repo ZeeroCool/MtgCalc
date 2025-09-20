@@ -152,6 +152,8 @@ class MortgageService {
     const schedule = this.generateAmortizationSchedule({ loanAmount, interestRate, loanTerm });
     const totalInterest = schedule.reduce((sum, payment) => sum + payment.interestPayment, 0);
     const totalPayments = monthlyPayment.totalMonthlyPayment * loanTerm * 12;
+    // Sum up the actual P&I payments from the schedule for accuracy
+    const totalPrincipalAndInterestPaid = schedule.reduce((sum, p) => sum + p.paymentAmount, 0);
 
     const apr = this.calculateAPR({ loanAmount, interestRate, loanTerm, fees: fees || 0 });
 
@@ -166,6 +168,7 @@ class MortgageService {
       monthlyPayment,
       totals: {
         totalPayments: roundToCents(totalPayments),
+        totalPayments: roundToCents(totalPrincipalAndInterestPaid),
         totalInterest: roundToCents(totalInterest),
         totalPrincipal: loanAmount,
         totalCost: roundToCents(loanAmount + totalInterest + (fees || 0))
